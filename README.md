@@ -6,3 +6,4 @@ I've created this repository to store the code that was made inside my DSA free 
 ### Covered Datastructures
 
 - Stack
+- Queue
