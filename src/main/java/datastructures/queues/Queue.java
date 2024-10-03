@@ -8,7 +8,7 @@ public class Queue {
     public void enqueue(int value) {
         QueueNode node = new QueueNode(value);
 
-        if(size == 0) {
+        if(isEmpty()) {
             first = node;
             last = node;
             size++;
@@ -19,6 +19,32 @@ public class Queue {
         last = node;
         size++;
 
+    }
+
+    public QueueNode dequeue() {
+        if(isEmpty()) {
+            return null;
+        }
+
+        if(size == 1) {
+            QueueNode aux = first;
+            first = null;
+            last = null;
+            size--;
+
+            return aux;
+        }
+
+        QueueNode aux = first;
+        first = first.next;
+        aux.next = null;
+        size--;
+
+        return aux;
+    }
+
+    private boolean isEmpty() {
+        return size == 0;
     }
 
     public QueueNode getFirst() {
